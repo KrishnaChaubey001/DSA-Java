@@ -1,0 +1,11 @@
+# IntelliJ IDEA
+.idea/
+
+# IntelliJ module files
+*.iml
+
+# Build output
+out/
+
+# Compiled Java classes
+*.class
