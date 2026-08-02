@@ -1,4 +1,4 @@
-package revision.day1;
+package DSA.revision.day1;
 /*
 Question:
 Given an integer array nums, return an array answer such that answer[i] is equal to
