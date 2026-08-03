@@ -34,7 +34,7 @@ Output:
 Explanation:
 The array is empty.
  */
-public class BS58_FindFirstAndLastPositionOfElementInSortedArray_34 {
+public class BS64_FindFirstAndLastPositionOfElementInSortedArray_34 {
     private static int firstOccurence(int nums[], int target){
         int low =0,high=nums.length-1,first=-1;
         while(low<=high){
