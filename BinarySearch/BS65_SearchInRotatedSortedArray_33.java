@@ -1,7 +1,8 @@
 package DSA.BinarySearch;
 /*
 Question:
-Given a rotated sorted array nums with distinct integers and an integer target, return the index of target if it exists. Otherwise, return -1.
+Given a rotated sorted array nums with distinct integers and an integer target,
+ return the index of target if it exists. Otherwise, return -1.
 Example 1:
 Input:
 int[] nums = {4,5,6,7,0,1,2};
