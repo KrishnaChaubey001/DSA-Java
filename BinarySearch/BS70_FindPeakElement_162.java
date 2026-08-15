@@ -1,7 +1,8 @@
 package DSA.BinarySearch;
 /*
 Question:
-A peak element is an element that is strictly greater than its neighbours. Given an integer array nums, return the index of any peak element.
+A peak element is an element that is strictly greater than its neighbours. Given an integer array nums,
+ return the index of any peak element.
 Example 1:
 Input:
 int[] nums = {1,2,3,1};
