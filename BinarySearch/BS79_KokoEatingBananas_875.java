@@ -1,7 +1,8 @@
 package DSA.BinarySearch;
 /*
 Question:
-Koko loves to eat bananas. There are n piles of bananas, and Koko can eat k bananas per hour. Return the minimum integer k such that Koko can eat all the bananas within h hours.
+Koko loves to eat bananas. There are n piles of bananas, and Koko can eat k bananas per hour.
+ Return the minimum integer k such that Koko can eat all the bananas within h hours.
 Example 1:
 Input:
 int[] piles = {3,6,7,11};
