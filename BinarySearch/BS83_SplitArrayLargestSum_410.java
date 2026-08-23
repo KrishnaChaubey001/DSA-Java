@@ -1,7 +1,8 @@
 package DSA.BinarySearch;
 /*
 Question:
-Given an integer array nums and an integer k, split nums into k non-empty subarrays. Return the largest sum among the k subarrays minimized as much as possible.
+Given an integer array nums and an integer k, split nums into k non-empty subarrays.
+Return the largest sum among the k subarrays minimized as much as possible.
 Example 1:
 Input:
 int[] nums = {7,2,5,10,8};
@@ -29,4 +30,37 @@ Each element forms its own subarray, so the largest sum is 4.
 --------------------------------------------------
 */
 public class BS83_SplitArrayLargestSum_410 {
+    public static int splitArray(int nums[],int k){
+        int low=nums[0],high=0;
+        for(int n:nums){
+            high+=n;
+            if(low<n) low=n;
+        }
+        while(low<=high){
+            int mid=low+(high-low)/2;
+            int sum=0;int subarray=1;
+            for(int n:nums){
+                sum+=n;
+                if(sum>mid){
+                    subarray++;
+                    sum=n;
+                }
+            }
+            if(subarray>k) low=mid+1;
+            else high=mid-1;
+        }
+        return low;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {7,2,5,10,8};
+        int k = 2;
+        System.out.println(splitArray(nums,k));
+        int[] nums1 = {1,2,3,4,5};
+        int k1 = 2;
+        System.out.println(splitArray(nums1,k1));
+        int[] nums2 = {1,4,4};
+        int k2 = 3;
+        System.out.println(splitArray(nums2,k2));
+    }
 }
