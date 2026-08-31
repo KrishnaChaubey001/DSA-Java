@@ -36,8 +36,39 @@ public class LL110_DeleteNodeAtPosition {
         }
     }
     Node head=null;
-    Node deleteAtPosition(int idx,int data){
+    Node deleteAtPosition(int idx){
+        if(idx<0|| head==null){
+            System.out.println("Invalid Index1");
+            return head;
+        }
+        if(idx==0){
+            head=head.next;
+            return head;
+        }
         Node current=head;
-        for(int i=0;i<idx)
+        for(int i=0;i<idx-1 ;i++){
+            if(current.next==null){
+                System.out.println("Invalid index2");
+                return head;
+            }
+            current=current.next;
+        }
+        if(current.next==null){
+            System.out.println("Invalid index3");
+            return head;
+        }
+
+        current.next=current.next.next;
+        return head;
+    }
+
+    public static void main(String[] args) {
+        LL110_DeleteNodeAtPosition ll=new LL110_DeleteNodeAtPosition();
+        Node first=ll.new Node(1);
+        Node second=ll.new Node(2);
+        first.next=second;
+        ll.head=first;
+        ll.deleteAtPosition(0);
+        System.out.println(ll.head.data);
     }
 }
