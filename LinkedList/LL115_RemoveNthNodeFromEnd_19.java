@@ -27,4 +27,66 @@ The last node is removed.
 --------------------------------------------------
 */
 public class LL115_RemoveNthNodeFromEnd_19 {
+    class Node{
+        int data;
+        Node next;
+        Node(int data){
+            this.data=data;
+        }
+    }
+    int count(Node head){
+        Node current= head;
+        int count=0;
+        while(current!=null){
+            count++;
+            current=current.next;
+        }
+        return count;
+    }
+    Node head=null;
+    Node deleteNthNodeFromEnd(int n){
+        if(head.next==null){
+            head=null;
+            return head;
+        }
+        int m=count(head);
+        if(m==n){
+            head=head.next;
+            return head;
+        }
+        Node current=head;
+        for(int i=0;i<m-n-1;i++){
+            current=current.next;
+        }
+        current.next=current.next.next;
+        return head;
+    }
+
+    void display(){
+        Node current=head;
+        while(current!=null){
+            System.out.print(current.data+" ");
+            current=current.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        LL115_RemoveNthNodeFromEnd_19 ll=new LL115_RemoveNthNodeFromEnd_19();
+        Node first=ll.new Node(10);
+        Node second=ll.new Node(20);
+        Node third=ll.new Node(30);
+        Node fourth=ll.new Node(40);
+        Node fifth=ll.new Node(50);
+        first.next=second;
+        second.next=third;
+        third.next=fourth;
+        fourth.next=fifth;
+        ll.head=first;
+        ll.display();
+        ll.deleteNthNodeFromEnd(5);
+        ll.display();
+    }
+
+
 }

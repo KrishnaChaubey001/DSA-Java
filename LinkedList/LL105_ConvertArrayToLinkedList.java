@@ -1,4 +1,4 @@
-package DSA.LinkedList;
+package DSA.LinkedList.MergeKSortedList;
 /*
 Question:
 Given an integer array nums, create a singly linked list containing all elements of the array in the same order and return the head of the linked list.
@@ -37,7 +37,7 @@ public class LL105_ConvertArrayToLinkedList {
             this.next=null;
         }
     }
-    public static Node convertArr2LL(int arr[]){
+    public Node convertArr2LL(int arr[]){
         Node head=new Node(arr[0]);
         Node current=head;
         for(int i=1;i<arr.length;i++){
@@ -49,9 +49,10 @@ public class LL105_ConvertArrayToLinkedList {
     }
 
     public static void main(String[] args) {
+        LL105_ConvertArrayToLinkedList ll=new LL105_ConvertArrayToLinkedList();
         int[] arr = {1, 2, 3, 4, 5};
 
-        Node head = convertArr2LL(arr);
+        Node head = ll.convertArr2LL(arr);
 
         Node current = head;
         while (current != null) {
