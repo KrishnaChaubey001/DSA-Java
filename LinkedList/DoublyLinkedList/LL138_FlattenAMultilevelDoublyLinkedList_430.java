@@ -1,7 +1,8 @@
 package DSA.LinkedList;
 /*
 Question:
-Given the head of a multilevel doubly linked list where nodes may contain a child linked list, flatten the list so that all nodes appear in a single-level doubly linked list.
+Given the head of a multilevel doubly linked list where nodes may contain a child linked list,
+flatten the list so that all nodes appear in a single-level doubly linked list.
 Input:
         1 -> 2 -> 3 -> 4 -> 5 -> 6
                   |
@@ -28,4 +29,5 @@ A single node remains unchanged.
 --------------------------------------------------
 */
 public class LL138_FlattenAMultilevelDoublyLinkedList_430 {
+
 }

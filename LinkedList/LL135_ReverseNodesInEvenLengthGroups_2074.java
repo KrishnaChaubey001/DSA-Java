@@ -1,4 +1,8 @@
 package DSA.LinkedList;
+
+import DSA.LinkedList.LinkedListUtils.ListNode;
+import static DSA.LinkedList.LinkedListUtils.createList;
+import static DSA.LinkedList.LinkedListUtils.display;
 /*
 Question:
 Given the head of a linked list, divide the nodes into groups of lengths 1, 2, 3, 4, and so on.
@@ -25,4 +29,45 @@ Only groups with an even number of nodes are reversed.
 --------------------------------------------------
 */
 public class LL135_ReverseNodesInEvenLengthGroups_2074 {
+    public ListNode reverseEvenLengthGroups(ListNode head) {
+        if(head==null && head.next==null) return head;
+        ListNode grPrev=head;
+        int size=2;
+        while(grPrev.next!=null){
+            ListNode start=grPrev.next;
+            ListNode current=start;
+            int count=0;
+            while(current!=null && count<size){
+                current=current.next;
+                count++;
+            }
+            if(count%2==0){
+                ListNode prev=current;
+                current=start;
+                for(int i=0;i<count;i++){
+                    ListNode front =current.next;
+                    current.next=prev;
+                    prev=current;
+                    current=front;
+                }
+                grPrev.next=prev;
+                grPrev=start;
+            }else{
+                for(int i=0;i<count;i++){
+                    grPrev=grPrev.next;
+                }
+            }
+            size++;
+        }
+        return head;
+
+    }
+
+    public static void main(String[] args) {
+        LL135_ReverseNodesInEvenLengthGroups_2074 ll=new LL135_ReverseNodesInEvenLengthGroups_2074();
+        ListNode head=createList();
+        ListNode result=ll.reverseEvenLengthGroups(head);
+        display(result);
+
+    }
 }

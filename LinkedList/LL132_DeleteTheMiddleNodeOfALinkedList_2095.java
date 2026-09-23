@@ -1,4 +1,8 @@
 package DSA.LinkedList;
+import DSA.LinkedList.LinkedListUtils.ListNode;
+import static DSA.LinkedList.LinkedListUtils.createList;
+import static DSA.LinkedList.LinkedListUtils.display;
+
 /*
 Question:
 Given the head of a singly linked list, delete the middle node and return the head of the modified linked list.
@@ -25,4 +29,25 @@ The second node is the middle node and is removed.
 --------------------------------------------------
 */
 public class LL132_DeleteTheMiddleNodeOfALinkedList_2095 {
+
+    public ListNode deleteMiddle(ListNode head) {
+        if(head==null || head.next==null) return null;
+        ListNode slow=head;
+        ListNode fast=head.next;
+        while(fast.next!=null && fast.next.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        ListNode front=slow.next.next;
+        slow.next=front;
+        return head;
+    }
+
+    public static void main(String[] args) {
+        LL132_DeleteTheMiddleNodeOfALinkedList_2095 ll=new LL132_DeleteTheMiddleNodeOfALinkedList_2095();
+        ListNode head = createList();
+        ListNode result= ll.deleteMiddle(head);
+        display(result);
+
+    }
 }

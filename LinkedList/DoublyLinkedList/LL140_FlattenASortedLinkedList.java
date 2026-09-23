@@ -1,7 +1,8 @@
 package DSA.LinkedList;
 /*
 Question:
-Given a linked list where every node has a next pointer and a bottom pointer, and each bottom-linked list is sorted, flatten the entire structure into one sorted linked list.
+Given a linked list where every node has a next pointer and a bottom pointer, and each bottom-linked list is sorted,
+flatten the entire structure into one sorted linked list.
 Input:
         5 -> 10 -> 19 -> 28
         |    |     |     |

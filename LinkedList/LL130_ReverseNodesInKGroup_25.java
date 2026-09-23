@@ -28,7 +28,7 @@ There are fewer than 3 nodes, so the list remains unchanged.
 --------------------------------------------------
 */
 public class LL130_ReverseNodesInKGroup_25 {
-    class Node{
+    static class  Node{
         int data;
         Node next;
         Node(int data){
@@ -69,14 +69,15 @@ public class LL130_ReverseNodesInKGroup_25 {
 
     public static void main(String[] args) {
         LL130_ReverseNodesInKGroup_25 ll=new LL130_ReverseNodesInKGroup_25();
-        Node head=ll.new Node(1);
-        head.next=ll.new Node(2);
-        head.next.next=ll.new Node(3);
-        head.next.next.next=ll.new Node(4);
-        head.next.next.next.next=ll.new Node(5);
-        head.next.next.next.next.next=ll.new Node(6);
-        head.next.next.next.next.next.next=ll.new Node(7);
-        head.next.next.next.next.next.next.next=ll.new Node(8);
+
+        Node head=new Node(1);
+        head.next=new Node(2);
+        head.next.next=new Node(3);
+        head.next.next.next=new Node(4);
+        head.next.next.next.next=new Node(5);
+        head.next.next.next.next.next=new Node(6);
+        head.next.next.next.next.next.next=new Node(7);
+        head.next.next.next.next.next.next.next=new Node(8);
         int k=3;
         Node result=ll.reverseKGroup(head,k);
         display(result);
